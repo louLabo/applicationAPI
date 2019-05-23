@@ -1,18 +1,20 @@
-# applicationAPI
-application à installer sur le serveur des partenaires, pour que nous disposions de l'API nous permettent de récupérer les données concernant les actions/expériences/projets en lien avec la biodiversité
 
- Ces fichiers sont à installer sur le serveur du partenaire. Ainsi les mots de passe et identifiants n'ont pas besoins de nous être transmis.
+Application à installer sur le serveur des partenaires, pour que nous disposions de l'API nous permettant de récupérer les données concernant les actions/expériences/projets en lien avec la biodiversité
 
-Le chemin d'accès à la base de donnée, son nom, le login utilisateur et son mot de passe dans le fichier "Database_config.php".
+Ces fichiers sont à installer sur le serveur du partenaire. Ainsi les mots de passe et identifiants n'ont pas besoins de nous être transmis.
 
-Le fichier "Projet.php" contient les requêtes qui interrogeont la base de données.
 
-Le fichier "Communication.php" sert à analyser la requête reçue pour déterminer la recherche qui doit être effectuée (recherche de toutes les actions, ou recherche en fonction de la ville, etc) et utilisera les fonction du fichiers "projets.php".
+Ajout d'une base de donnée : 
+Le chemin d'accès à la base de donnée, son nom, le login utilisateur et son mot de passe dans le fichier "Database.php" dans la fonction construct.
 
-Le fichier "Projets.php" stocke des fonctions et appelle les fonctions du fichier "Projet.php".
+Il faut déterminer les "types de contenu " qui pourront être extraits à partir des données proposées. 
+Un type de contenu est ici désigné par une liste de données fournies et avec ses propres règles de mise en page.
 
-Le fichier "Database.php" permet d'obtenir une connexion à la base de données renseignée dans le fichier "Database_config.php".
-
-Le fichier ".thaccess" est un fichier de routage qui peut être utilisé pour rendre les URI d'accès plus compréhensibles.
+Les types de contenus déjà implémenté dans le module sont présents en fin de fichier.
+On peut également implémenter un nouveau type de contenu, les manipulations à réaliser sont décritent par la suite.
+ 
+ 
+Si un type de contenu extractable de la base de donnée est déjà crée, il a alors déjà 
+ a nature des informations à requeter, veuillez trouver en bas la liste des type d'article à 
 
 

@@ -1,21 +1,26 @@
 <?php
 
 class Database{
-
   // specify your own database credentials
+
   private $host;
   private $db_name ;
   private $username;
   private $password;
   public $conn;
 
+  public function __construct(){
 
-    public function __construct($host, $name, $user, $password){
-      $this->host = $host;
-      $this->db_name = $name;
-      $this->username = $user;
-      $this->password =$password;
+      // Configurez votre database ici
+      // Ne touchez à rien d'autre sur ce fichier.
+//***********************************************************
+      $this->host = "localhost";
+      $this->db_name = "dump";
+      $this->username = "root";
+      $this->password = "";
+//***********************************************************
     }
+
 
     // get the database connection
     public function getConnection(){
