@@ -12,19 +12,33 @@ Un type de contenu peut être extrait d'une base de donnée seulement si celle-c
 
 Par exemple pour un type de contenu Expérience, il est nécessaire d'avoir :
 Titre
+
 Description (sommaire)
+
 Corps 
+
 Date début - Date fin, sous format JJ/MM/AAAA
+
 Organisme en charge
+
 Budget
+
 Partenaires techniques / financiers
+
 Les Contacts
+
 Nom(s) Des/de la ville(s) où cette expérience a eu lieu 
+
 L’/Les année(s) de expérience 
+
 Localisation de l’expérience selon un de ces 3 formats compatible avec google map : 
+
 Degrés, minutes et secondes (DMS) : 41°24'12.2" N 2°10'26.5" E
+
 Degrés et minutes décimales (DMM) : 41 24.2028, 2 10.4418
+
 Degrés décimaux (DD) : 41.40338, 2.17403
+
 
 
 Les types de contenus déjà implémentés dans le module sont présents en fin de fichier.
@@ -40,18 +54,31 @@ Types de contenus implémentés :
 Experiences :
 
 Titre
+
 Description (sommaire)
+
 Corps 
+
 Date début - Date fin, sous format JJ/MM/AAAA
+
 Organisme en charge
+
 Budget
+
 Partenaires techniques / financiers
+
 Les Contacts
+
 Nom(s) Des/de la ville(s) où cette expérience a eu lieu 
+
 L’/Les année(s) de expérience 
+
 Localisation de l’expérience selon un de ces 3 formats compatible avec google map : 
+
 Degrés, minutes et secondes (DMS) : 41°24'12.2" N 2°10'26.5" E
+
 Degrés et minutes décimales (DMM) : 41 24.2028, 2 10.4418
+
 Degrés décimaux (DD) : 41.40338, 2.17403
 
 
