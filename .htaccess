@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule ^actions?$ Communication.php
+
+RewriteRule ^Communication?$ Communication.php
+
+
+
+RewriteRule ^Projets/([a-zA-Z]+) Projets.php?id=$1
+
+RewriteRule ^Projets/([0-9]+) Projets.php?id=$0
