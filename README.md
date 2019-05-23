@@ -35,8 +35,6 @@ Pour l'implémenter il suffit de crée un fichier nom_contenuDAOImp qui impléme
 Et modifier le fichier nom_contenu entre les //******* pour la standardisation des champs.
 
 
-![alt text](https://github.com/louLabo/applicationAPI/blob/master/Schema%20du%20dispositif.png)
-
 Types de contenus implémentés :
 
 Experiences :
@@ -55,3 +53,6 @@ Localisation de l’expérience selon un de ces 3 formats compatible avec google
 Degrés, minutes et secondes (DMS) : 41°24'12.2" N 2°10'26.5" E
 Degrés et minutes décimales (DMM) : 41 24.2028, 2 10.4418
 Degrés décimaux (DD) : 41.40338, 2.17403
+
+
+![alt text](https://github.com/louLabo/applicationAPI/blob/master/Schema%20du%20dispositif.png)
