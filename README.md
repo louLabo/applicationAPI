@@ -1,13 +1,24 @@
 
+Description
+==
+
 Application à installer sur le serveur des sites cibles, et à connecter sur leur base de donnée (renseigner les identifiants dans le fichier Database).
-Elle délivre une API reliée au module crée distant_searcher sur l'application Drupal PartageonsVert et permet de requeter indirectement la base de donnée cibel ( voir schema du dispositif en fin de fichier)
+Elle délivre une API reliée au module crée distant_searcher sur l'application Drupal PartageonsVert et permet de requeter indirectement la base de donnée cibel ( voir schema du dispositif en fin de fichier).
 
+Database.php : script de connexion à la base de donnée, contient les identifiants.
+nom_contenuDAO.php : interface qui liste les fonctions à implémenter pour chaque type de contenu* (les fonctions de requetage de la BD)
+nom_contenu.php : orchestre la recherche des données propres au contenu.
+nom_contenuDAOImpl.php : implémente nom_contenuDAO, à modifier pour chaque base de données.
 
+*Un type de contenu est ici désigné par une liste de données précises, avec ses propres règles de mise en page.
+
+Marche à suivre lors de l'installation vers une nouvelle base de donnée
+==
+ 
 Afin d'ajouter une base de donnée, il faut : 
 Le chemin d'accès à la base de donnée, son nom, le login utilisateur et son mot de passe dans le fichier "Database.php" dans la fonction construct.
 
 Il faut déterminer les "types de contenu " qui pourront être extraits à partir des données proposées. 
-Un type de contenu est ici désigné par une liste de données précise, avec ses propres règles de mise en page.
 Un type de contenu peut être extrait d'une base de donnée seulement si celle-ci contient toutes les données requises par ce contenu, il faut alors au préalable lister toutes les tables et champs correspondants à ces données.
 
 Par exemple pour un type de contenu Expérience, il est nécessaire d'avoir :
@@ -31,10 +42,10 @@ Par exemple pour un type de contenu Expérience, il est nécessaire d'avoir :
            
 
 Les types de contenus déjà implémentés dans le module sont présents en fin de fichier.
-On peut également implémenter un nouveau type de contenu, les manipulations à réaliser sont décritent par la suite.
+*On peut également implémenter un nouveau type de contenu, les manipulations à réaliser sont décritent par la suite.
  
 Si un type de contenu extractable de la base de donnée est déjà crée, il a alors déjà un fichier nom_contenuDAO.php et nom_Contenu.php
-Pour l'implémenter il suffit de crée un fichier nom_contenuDAOImp qui implémente le DAO et crée les fonctions de requetage de la base de donnée (voir exemple Experience dans l'API applicationAPI, API paramétrée pour la base de donnée de Capitales Françaises pour la Biodiversité)
+Pour le rendre opérationnel pour cette BD il suffit de crée (ou si il existe déjà le modifier) un fichier nom_contenuDAOImp qui implémente le DAO et crée les fonctions de requetage de la base de donnée (voir exemple Experience dans l'API applicationAPI, API paramétrée pour la base de donnée de Capitales Françaises pour la Biodiversité)
 Et modifier le fichier nom_contenu entre les //******* pour la standardisation des champs.
 
 
