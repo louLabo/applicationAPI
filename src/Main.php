@@ -49,6 +49,7 @@ function main_without_data()
             echo $res;
 
     }
+
 }
 
 //********************** Fonction de traitement des types de contenu **************************
