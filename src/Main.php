@@ -13,8 +13,7 @@ if(isset($_GET["recherche"])){
   echo $Experience -> analyse($doc);
 }
 else {
-  $doc = $Experience->requesting('Suc');
-  //$doc = $Experience->requestingWithoutData();
+  $doc = $Experience->requestingWithoutData();
   echo $Experience -> analyse($doc);
 }
 ?>
