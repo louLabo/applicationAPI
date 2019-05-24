@@ -3,12 +3,13 @@ Description
 ==
 
 Application à installer sur le serveur des sites cibles, et à connecter sur leur base de donnée (renseigner les identifiants dans le fichier Database).
-Elle délivre une API reliée au module crée distant_searcher sur l'application Drupal PartageonsVert et permet de requeter indirectement la base de donnée cibel ( voir schema du dispositif en fin de fichier).
+Elle délivre une API reliée au module crée distant_searcher sur l'application Drupal PartageonsVert, ce dernier lui envoi des données grâce à un get_file_content avec en paramètre l'URL vers le fichier Main.php de cet API. Cette API traite cela et requete la base de donnée cible ( voir schema du dispositif en fin de fichier).
 
-Database.php : script de connexion à la base de donnée, contient les identifiants.
-nom_contenuDAO.php : interface qui liste les fonctions à implémenter pour chaque type de contenu* (les fonctions de requetage de la BD)
-nom_contenu.php : orchestre la recherche des données propres au contenu.
-nom_contenuDAOImpl.php : implémente nom_contenuDAO, à modifier pour chaque base de données.
+- Main.php : Gère la récupération des données envoyées depuis le module, orchestre la recherche parmi tous les contenus affiliés à cette API, renvoi ces données au module.
+- Database.php : script de connexion à la base de donnée, contient les identifiants.
+- Nom_contenuDAO.php : interface qui liste les fonctions à implémenter pour chaque type de contenu* (les fonctions de requetage de la BD).
+- Nom_contenu.php : orchestre la recherche des données propres au contenu, formatte les résultats pour rentrer dans les standards requis pour l'affichage sur le module (fonction standardize).
+- Nom_contenuDAOImpl.php : implémente Nom_contenuDAO, à modifier pour chaque base de données, il s'agit de fonctions de requetage de la BD, chaque fonction renvoi toutes les données nécessaires au type de contenu en fonction d'un (ou de plusieurs) paramètre(s) par exemple en fonction de la ville, du nom d'auteur...
 
 *Un type de contenu est ici désigné par une liste de données précises, avec ses propres règles de mise en page.
 
@@ -48,8 +49,16 @@ Si un type de contenu extractable de la base de donnée est déjà crée, il a a
 Pour le rendre opérationnel pour cette BD il suffit de crée (ou si il existe déjà le modifier) un fichier nom_contenuDAOImp qui implémente le DAO et crée les fonctions de requetage de la base de donnée (voir exemple Experience dans l'API applicationAPI, API paramétrée pour la base de donnée de Capitales Françaises pour la Biodiversité)
 Et modifier le fichier nom_contenu entre les //******* pour la standardisation des champs.
 
+Implémenter un nouveau type de contenu (aidez vous de l'exemple du contenu Experience)
+--
+- Lister les données nécessaires au contenu (comme ci-joint avec Expérience).
+- Créer un fichier nom_contenuDAO, y définir les fonctions à implémenter. (voir descriptif nom_contenuDAO )
+- Créer un fichier nom_contenuDAOImpl et implémenter nom_contenuDAO.
+- Créer un fichier nom_contenu et y implémenter les fonctions de requetage et de standardisation.
+- Ajouter dans le main
 
 Types de contenus implémentés :
+==
 
 Experiences :
 
@@ -71,5 +80,6 @@ Experiences :
            
             Degrés décimaux (DD) : 41.40338, 2.17403
 
-
+Annexe : 
+==
 ![alt text](https://github.com/louLabo/applicationAPI/blob/master/Schema%20du%20dispositif.png)
