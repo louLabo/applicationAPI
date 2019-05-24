@@ -12,7 +12,6 @@ if(isset($_GET["recherche"])){
     main_with_data($_GET["recherche"]);
 }
 else {
-    //main_with_data('Suc');
     main_without_data();
 }
 
