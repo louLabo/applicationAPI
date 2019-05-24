@@ -52,10 +52,13 @@ Et modifier le fichier nom_contenu entre les //******* pour la standardisation d
 Implémenter un nouveau type de contenu (aidez vous de l'exemple du contenu Experience)
 --
 - Lister les données nécessaires au contenu (comme ci-joint avec Expérience).
-- Créer un fichier nom_contenuDAO, y définir les fonctions à implémenter. (voir descriptif nom_contenuDAO )
-- Créer un fichier nom_contenuDAOImpl et implémenter nom_contenuDAO.
-- Créer un fichier nom_contenu et y implémenter les fonctions de requetage et de standardisation.
-- Ajouter dans le main
+- Créer un fichier nom_contenuDAO.php, y définir les fonctions à implémenter. (voir descriptif nom_contenuDAO )
+- Créer un fichier nom_contenuDAOImpl.php et implémenter nom_contenuDAO.
+- Créer un fichier nom_contenu.php et y implémenter les fonctions de requetage et de standardisation.
+- Ajouter dans le main une fonction nom_contenu_requesting_with_data et nom_contenu_requesting_without_data, les appeler dans le if(isset...)else(...) en haut du script. 
+ 
+- Pour ajouter un critère de recherche (comme ville ou organisme dans expérience) il suffit de l'ajouter dans la liste parameter du sontenu dans le main, ajouter dans nom_contenu.php un if dans lequel on appel la fonction correspondante de nom_contenuDAOImpl.php
+On ajoute également la fonction de requete dans l'interface nom_contenuDAO.php
 
 Types de contenus implémentés :
 ==
