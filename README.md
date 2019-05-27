@@ -2,6 +2,7 @@
 Description
 ==
 
+lien vers dossier google drive du projet : https://drive.google.com/drive/folders/1xD37GxOOPnNko4Dewun3q6TZmWuDzXAg?usp=sharing
 Application à installer sur le serveur des sites cibles, et à connecter sur leur base de donnée (renseigner les identifiants dans le fichier Database).
 Elle délivre une API reliée au module crée distant_searcher sur l'application Drupal PartageonsVert, ce dernier lui envoi des données grâce à un get_file_content avec en paramètre l'URL vers le fichier Main.php de cet API. Cette API traite cela et requete la base de donnée cible ( voir schema du dispositif en fin de fichier).
 
